@@ -83,6 +83,18 @@ return array(
 			'prefix'   => '',
 		),
 
+		// Custom connections
+		'local' => array(
+			'driver'   => 'pgsql',
+			'host'     => '10.1.11.204',
+			'database' => 'datastore',
+			'username' => 'postgres',
+			'password' => '',
+			'charset'  => 'utf8',
+			'prefix'   => '',
+			'schema'   => 'public',
+		),
+
 	),
 
 	/*
