@@ -30,7 +30,7 @@
     This means that their Website will be down and they will be unable to receive e-mail.<br />
     <br />
     Please help us ensure that their services remain uninterrupted by getting them to renew as soon as possible.<br /><br />
-    You may renew the domains on behalf of your clients by logging in through the Partner link on our websitewww.dot.ph or by clicking on the ff. link:<br />
+    You may renew the domains on behalf of your clients by logging in through the Partner link on our website <a href="www.dot.ph">www.dot.ph</a> or by clicking on the ff. link:<br />
     <a href="https://partner.dotphstaging.ph">https://partner.dotphstaging.ph</a><br /><br />
     Once you are logged in, click on the domain you want to renew and follow the instructions.<br /><br />
     For inquiries or further clarification please call us at +632 637-2104 to 05 or e-mail us at: <address>athelpdesk@dot.ph</address><br />
