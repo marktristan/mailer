@@ -42,8 +42,8 @@ class EmailNotifications extends Command {
 		{
 			// All of expiring domains should go here
 			Notice::send15();
-			// Notice::send30();
-			// Notice::send90();
+			Notice::send30();
+			Notice::send90();
 		}
 	}
 

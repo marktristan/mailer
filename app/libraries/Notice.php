@@ -43,7 +43,7 @@ class Notice {
           Mail::queue('emails.notice', $data, function($message) use ($key, $email)
           {
             $message->from('registrar@dot.ph', 'dotPH');
-            $message->to($email);
+            $message->to('mt.victorio@dot.ph');
             $message->subject("$key - 15 days before expiration");
           });
         }
@@ -92,7 +92,7 @@ class Notice {
           Mail::queue('emails.notice', $data, function($message) use ($key, $email)
           {
             $message->from('registrar@dot.ph', 'dotPH');
-            $message->to($email);
+            $message->to('mt.victorio@dot.ph');
             $message->subject("$key - 30 days before expiration");
           });
         }
@@ -141,7 +141,7 @@ class Notice {
           Mail::queue('emails.notice', $data, function($message) use ($key, $email)
           {
             $message->from('registrar@dot.ph', 'dotPH');
-            $message->to($email);
+            $message->to('mt.victorio@dot.ph');
             $message->subject("$key - 90 days before expiration");
           });
         }
