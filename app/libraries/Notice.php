@@ -8,14 +8,18 @@ class Notice {
     if (count($expiring) > 0)
     {
       $tmpData = array();
+      $tmpName = array();
+      $tmpEmail = array();
       foreach ($expiring as $row)
       {
         $tmpData[$row->login_id][] = array(
           'domains' => $row->domain,
           'expiry_date' => $row->expiry_date,
-          'partner_email' => $row->partner_email,
           'contact_email' => $row->contact_email
         );
+
+        $tmpName[$row->login_id] = $row->representative;
+        $tmpEmail[$row->login_id] = $row->partner_email;
       }
 
       if (count($tmpData) > 0)
@@ -27,19 +31,20 @@ class Notice {
           {
             foreach ($val as $key2 => $val2)
             {
-              $domains[$val2['domains']] = $val2['expiry_date'];
+              $domains[$val2['domains']] = date('Y-m-d', strtotime($val2['expiry_date']));
             }
           }
 
-          $data = array('partner' => $key, 'domains' => $domains, 'days' => 15);
-          //print_r($data);
+          $data = array('partner' => $key, 'representative' => $tmpName[$key], 'domains' => $domains, 'days' => 15);
 
-          //send email here
-          Mail::queue('emails.notice', $data, function($message)
+          $email = $tmpEmail[$key];
+
+          // Send email here
+          Mail::queue('emails.notice', $data, function($message) use ($key, $email)
           {
-            $message->from('us@example.com', 'Laravel');
-            $message->to('mt.victorio@dot.ph');
-            $message->subject('dotPH Notification - Expiring Domains');
+            $message->from('registrar@dot.ph', 'dotPH');
+            $message->to($email);
+            $message->subject("$key - 15 days before expiration");
           });
         }
       }
@@ -52,14 +57,18 @@ class Notice {
     if (count($expiring) > 0)
     {
       $tmpData = array();
+      $tmpName = array();
+      $tmpEmail = array();
       foreach ($expiring as $row)
       {
         $tmpData[$row->login_id][] = array(
           'domains' => $row->domain,
           'expiry_date' => $row->expiry_date,
-          'partner_email' => $row->partner_email,
           'contact_email' => $row->contact_email
         );
+
+        $tmpName[$row->login_id] = $row->representative;
+        $tmpEmail[$row->login_id] = $row->partner_email;
       }
 
       if (count($tmpData) > 0)
@@ -71,19 +80,20 @@ class Notice {
           {
             foreach ($val as $key2 => $val2)
             {
-              $domains[$val2['domains']] = $val2['expiry_date'];
+              $domains[$val2['domains']] = date('Y-m-d', strtotime($val2['expiry_date']));
             }
           }
 
-          $data = array('partner' => $key, 'domains' => $domains, 'days' => 30);
-          //print_r($data);
+          $data = array('partner' => $key, 'representative' => $tmpName[$key], 'domains' => $domains, 'days' => 30);
 
-          //send email here
-          Mail::queue('emails.notice', $data, function($message)
+          $email = $tmpEmail[$key];
+
+          // Send email here
+          Mail::queue('emails.notice', $data, function($message) use ($key, $email)
           {
-            $message->from('us@example.com', 'Laravel');
-            $message->to('mt.victorio@dot.ph');
-            $message->subject('dotPH Notification - Expiring Domains');
+            $message->from('registrar@dot.ph', 'dotPH');
+            $message->to($email);
+            $message->subject("$key - 30 days before expiration");
           });
         }
       }
@@ -96,14 +106,18 @@ class Notice {
     if (count($expiring) > 0)
     {
       $tmpData = array();
+      $tmpName = array();
+      $tmpEmail = array();
       foreach ($expiring as $row)
       {
         $tmpData[$row->login_id][] = array(
           'domains' => $row->domain,
           'expiry_date' => $row->expiry_date,
-          'partner_email' => $row->partner_email,
           'contact_email' => $row->contact_email
         );
+
+        $tmpName[$row->login_id] = $row->representative;
+        $tmpEmail[$row->login_id] = $row->partner_email;
       }
 
       if (count($tmpData) > 0)
@@ -115,19 +129,20 @@ class Notice {
           {
             foreach ($val as $key2 => $val2)
             {
-              $domains[$val2['domains']] = $val2['expiry_date'];
+              $domains[$val2['domains']] = date('Y-m-d', strtotime($val2['expiry_date']));
             }
           }
 
-          $data = array('partner' => $key, 'domains' => $domains, 'days' => 90);
-          //print_r($data);
+          $data = array('partner' => $key, 'representative' => $tmpName[$key], 'domains' => $domains, 'days' => 90);
 
-          //send email here
-          Mail::queue('emails.notice', $data, function($message)
+          $email = $tmpEmail[$key];
+
+          // Send email here
+          Mail::queue('emails.notice', $data, function($message) use ($key, $email)
           {
-            $message->from('us@example.com', 'Laravel');
-            $message->to('mt.victorio@dot.ph');
-            $message->subject('dotPH Notification - Expiring Domains');
+            $message->from('registrar@dot.ph', 'dotPH');
+            $message->to($email);
+            $message->subject("$key - 90 days before expiration");
           });
         }
       }

@@ -23,7 +23,7 @@ class Partner extends Eloquent {
   public static function getExpiringDomains15()
   {
     $query = "
-      SELECT (d.name||d.extension) AS domain, d.expiry_date, r.login_id, r.email AS partner_email, c.email AS contact_email FROM domains d
+      SELECT (d.name||d.extension) AS domain, d.expiry_date, r.login_id, r.representative, r.email AS partner_email, c.email AS contact_email FROM domains d
       LEFT JOIN registrars r ON r.id = d.registrar_id
       LEFT JOIN contacts c ON c.handle = d.registrant_handle
       INNER JOIN domain_status ds ON ds.domain_id = d.id
@@ -40,7 +40,7 @@ class Partner extends Eloquent {
   public static function getExpiringDomains30()
   {
     $query = "
-      SELECT (d.name||d.extension) AS domain, d.expiry_date, r.login_id, r.email AS partner_email, c.email AS contact_email FROM domains d
+      SELECT (d.name||d.extension) AS domain, d.expiry_date, r.login_id, r.representative, r.email AS partner_email, c.email AS contact_email FROM domains d
       LEFT JOIN registrars r ON r.id = d.registrar_id
       LEFT JOIN contacts c ON c.handle = d.registrant_handle
       INNER JOIN domain_status ds ON ds.domain_id = d.id
@@ -57,7 +57,7 @@ class Partner extends Eloquent {
   public static function getExpiringDomains90()
   {
     $query = "
-      SELECT (d.name||d.extension) AS domain, d.expiry_date, r.login_id, r.email AS partner_email, c.email AS contact_email FROM domains d
+      SELECT (d.name||d.extension) AS domain, d.expiry_date, r.login_id, r.representative, r.email AS partner_email, c.email AS contact_email FROM domains d
       LEFT JOIN registrars r ON r.id = d.registrar_id
       LEFT JOIN contacts c ON c.handle = d.registrant_handle
       INNER JOIN domain_status ds ON ds.domain_id = d.id
