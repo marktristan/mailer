@@ -41,6 +41,7 @@ class EmailNotifications extends Command {
 		if ($type == 'expiring')
 		{
 			// All of expiring domains should go here
+			Notice::send00();
 			Notice::send15();
 			Notice::send30();
 			Notice::send90();
