@@ -8,7 +8,7 @@
   <div style="font-size:12px;">
     Dear {{{ $representative }}},
     <br /><br />
-    Please be informed that registration for the ff. domain/s will expire in {{{ $days }}} days:
+    Please be informed that registration for the ff. domain/s will expire {{{ $days }}}:
     <br /><br />
     <table style="font-size:12px;">
       <thead>

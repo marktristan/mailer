@@ -35,7 +35,7 @@ class Notice {
             }
           }
 
-          $data = array('partner' => $key, 'representative' => $tmpName[$key], 'domains' => $domains, 'days' => 0);
+          $data = array('partner' => $key, 'representative' => $tmpName[$key], 'domains' => $domains, 'days' => 'today');
 
           $email = $tmpEmail[$key];
 
@@ -50,7 +50,7 @@ class Notice {
       }
     }
   }
-  
+
   public static function send15()
   {
     $expiring = Partner::getExpiringDomains15();
@@ -84,7 +84,7 @@ class Notice {
             }
           }
 
-          $data = array('partner' => $key, 'representative' => $tmpName[$key], 'domains' => $domains, 'days' => 15);
+          $data = array('partner' => $key, 'representative' => $tmpName[$key], 'domains' => $domains, 'days' => 'in 15 days');
 
           $email = $tmpEmail[$key];
 
@@ -133,7 +133,7 @@ class Notice {
             }
           }
 
-          $data = array('partner' => $key, 'representative' => $tmpName[$key], 'domains' => $domains, 'days' => 30);
+          $data = array('partner' => $key, 'representative' => $tmpName[$key], 'domains' => $domains, 'days' => 'in 30 days');
 
           $email = $tmpEmail[$key];
 
@@ -182,7 +182,7 @@ class Notice {
             }
           }
 
-          $data = array('partner' => $key, 'representative' => $tmpName[$key], 'domains' => $domains, 'days' => 90);
+          $data = array('partner' => $key, 'representative' => $tmpName[$key], 'domains' => $domains, 'days' => 'in 90 days');
 
           $email = $tmpEmail[$key];
 
